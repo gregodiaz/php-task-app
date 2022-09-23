@@ -4,7 +4,7 @@
 
 @foreach($tasks as $task)
 
-<div class="bg-gray-300 text-gray-900 m-4 p-3">
+<div class="bg-neutral-400 text-neutral-900 m-4 p-3">
     <a href="{{ route('detail', ["task" => $task->slug]) }}">
 
         <div class="text-3xl">
@@ -12,8 +12,8 @@
         </div>
 
         <div class="flex justify-between">
-            <p class="text-gray-600 text-m" > {{ $task->user->name }} </p>
-            <p class="text-gray-700 text-s"> {{ $task->created_at->format('d/m/y') }} </p>
+            <p class="text-neutral-800 text-m"> {{ $task->user->name }} </p>
+            <p class="text-neutral-700 text-s"> {{ $task->created_at->format('d/m/y') }} </p>
         </div>
 
     </a>
@@ -21,9 +21,9 @@
 
 @endforeach
 
-<div class="bg-gray-400 text-gray-900 mb-2 mx-4 px-3">
-    
-{{$tasks->links();}}
+<div class="bg-neutral-400 text-neutral-900 mb-2 mx-4 px-3">
+
+    {{$tasks->links();}}
 
 </div>
 
