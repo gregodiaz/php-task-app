@@ -20,8 +20,14 @@
 
 <body class="relative">
 
-    <div class="bg-neutral-800 sticky top-0 left-0 right-0 text-3xl mx-2 p-3">
-        <a href="{{route('home')}}"> Home <a />
+    <div class="flex justify-between bg-neutral-800 sticky top-0 text-3xl mx-2 p-3">
+        <a href="{{route('home')}}">Home</a>
+
+        @auth
+        <a href="{{route('dashboard')}}">Dashboard</a>
+        @else
+        <a href="{{route('login')}}">Login</a>
+        @endauth
     </div>
 
     <div class="">
