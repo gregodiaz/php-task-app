@@ -12,19 +12,17 @@
     <style>
         body {
             font-family: 'Nunito', sans-serif;
-            background-color: #2f2f2f;
-            color: #f2f2f2;
+            background-color: rgb(23, 23, 23);
+            color: rgb(212, 212, 212);
         }
     </style>
 </head>
 
-<body>
+<body class="relative">
 
-    <div>
+    <div class="bg-neutral-800 sticky top-0 left-0 right-0 text-3xl mx-2 p-3">
         <a href="{{route('home')}}"> Home <a />
     </div>
-
-    <hr>
 
     <div class="">
         @yield('content')

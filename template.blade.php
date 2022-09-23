@@ -17,13 +17,13 @@
 
 <body>
 
-    <div>
+    <div class="text-xl font-bold mx-2 p-3">
         <a href="{{route('home')}}"> Home <a />
     </div>
 
     <hr>
 
-    <div class="container">
+    <div class="">
         @yield('content')
     </div>
 
