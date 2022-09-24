@@ -11,11 +11,11 @@ Route::controller(PageController::class)->group(function () {
     Route::get('/detail/{task:slug}', 'detail')->name('detail');
 });
 
-Route::get('/dashboard', function () {
+Route::get('/tasks', function () {
 
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+    return view('tasks.index');
+})->middleware(['auth'])->name('tasks.index');
 
 Route::resource('tasks', TaskController::class);
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

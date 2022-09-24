@@ -1,17 +1,29 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Tasks') }}
-        </h2>
-    </x-slot>
+@extends('template')
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    Tasks
-                </div>
-            </div>
+@section('content')
+
+@foreach($tasks as $task)
+
+<a href="{{ route('detail', ["task" => $task->slug]) }}">
+    <div class="bg-neutral-400 text-neutral-900 m-4 p-3">
+        <div class="flex justify-between">
+            <h1 class="text-3xl">{{ $task->title }}</h1>
+            <p class="text-neutral-800 text-xl">{{ $task->client->business_name }}</p>
         </div>
+
+        <div class="flex justify-between">
+            <p class="text-neutral-600 text-m">{{ $task->user->name }}</p>
+            <p class="text-neutral-700 text-s">{{ $task->created_at->format('d/m/y - h:i') }}</p>
+        </div>
+
+        </a>
     </div>
-</x-app-layout>
+</a>
+
+@endforeach
+
+<div class="text-neutral-900 mb-2 mx-4 px-3">
+    {{$tasks->links();}}
+</div>
+
+@endsection

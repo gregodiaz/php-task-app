@@ -1,32 +1,19 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Home') }}
+        </h2>
+    </x-slot>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Task App</title>
-    <!-- Fonts -->
-    <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Styles -->
-    <style>
-        body {
-            font-family: 'Nunito', sans-serif;
-        }
-    </style>
-</head>
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 bg-white border-b border-gray-200">
 
-<body>
+                    @yield('content')
 
-    <div class="text-xl font-bold mx-2 p-3">
-        <a href="{{route('home')}}"> Home <a />
+                </div>
+            </div>
+        </div>
     </div>
-
-    <hr>
-
-    <div class="">
-        @yield('content')
-    </div>
-
-</body>
-
-</html>
+</x-app-layout>
